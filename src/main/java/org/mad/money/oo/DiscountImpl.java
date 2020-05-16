@@ -15,7 +15,14 @@ public class DiscountImpl implements Discount {
 
     @Override
     public BigDecimal applyDiscount(BigDecimal amount) {
-        var discount = amount.multiply(rate);
-        return amount.add(discount.negate());
+        if(amount.compareTo(BigDecimal.valueOf(100)) == 1) {
+            var discount = amount.multiply(rate);
+            return amount.add(discount.negate());
+        }
+        else
+        {
+            System.out.println("discount only available over 100");
+            return amount;
+        }
     }
 }
