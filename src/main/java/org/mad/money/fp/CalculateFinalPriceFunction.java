@@ -5,5 +5,5 @@ import java.util.function.Function;
 
 @FunctionalInterface
 public interface CalculateFinalPriceFunction {
-    BigDecimal apply(Function<BigDecimal, BigDecimal> applyDiscount, Function<BigDecimal, BigDecimal> applyTax, BigDecimal listingPrice);
+    BigDecimal apply(Function<BigDecimal, Boolean> applyDiscountRule, Function<BigDecimal, BigDecimal> applyDiscount, Function<BigDecimal, BigDecimal> applyTax, BigDecimal listingPrice);
 }
